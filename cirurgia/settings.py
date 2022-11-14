@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -69,14 +69,35 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "cirurgia.wsgi.application"
 
+# DBNAME = os.environ["postgres"]
+# DBHOST = os.environ["cirugia-server"]
+# DBUSER = os.environ["rkhuvpebkf"]
+# DBPASS = os.environ["P4RD35T44OX5MOB7$"]
 
+# hostname = os.environ['DBHOST']
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         # "NAME": BASE_DIR / "db.sqlite3",
+#         "NAME": DBNAME,
+#         "USER": DBUSER,
+#         "PASSWORD": DBPASS,
+#         "HOST": hostname + ".postgres.database.azrue.com",
+#         # 'PORT': '',
+#     }
+# }
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'HOST': 'cirugia-server' + '.postgres.database.azrue.com',
+        'USER': 'rkhuvpebkf',
+        'PASSWORD': "P4RD35T44OX5MOB7$",
+        'PORT': '5432',
     }
 }
 
@@ -103,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "pt-br"
 
 TIME_ZONE = "UTC"
 
