@@ -93,11 +93,11 @@ WSGI_APPLICATION = "cirurgia.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'HOST': 'cirugia-server' + '.postgres.database.azrue.com',
-        'USER': 'rkhuvpebkf',
-        'PASSWORD': "P4RD35T44OX5MOB7$",
-        'PORT': '5432',
+        'NAME': os.environ['postgres'],
+        'HOST': os.environ['cirugia-server.postgres.database.azure.com'],
+        'USER': os.environ['rkhuvpebkf'],
+        'PASSWORD': os.environ['P4RD35T44OX5MOB7$'],
+
     }
 }
 
