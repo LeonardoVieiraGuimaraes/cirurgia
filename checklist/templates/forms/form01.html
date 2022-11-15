@@ -9,7 +9,7 @@
 
 
 {% block form %}
-{% csrf_token %}
+
 <p><label for="{{ form.prontuario.id_for_label }}">Prontuario: </label>
     <input type="text" name="{{ form.prontuario.name }}" id="{{ form.prontuario.id_for_label }}"
         value="{{ form.prontuario.value | default_if_none:'' }}" required>
