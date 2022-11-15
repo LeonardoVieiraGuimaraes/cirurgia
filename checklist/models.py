@@ -20,7 +20,9 @@ class Paciente(models.Model):
     def __str__(self):
         return "{} - {}".format(self.prontuario, self.nome)
 
+
 # Cadastro para Cirurgia
+''
 
 
 class Cirurgia(models.Model):
@@ -168,28 +170,3 @@ class AntesUsuarioSSC(models.Model):
 
     def __str__(self):
         return "{} - {}".format(self.paciente.prontuario, self.paciente.nome)
-
-# class Order(models.Model):
-#     first_name = models.CharField(max_length=50)
-#     last_name = models.CharField(max_length=50)
-#     email = models.EmailField()
-#     address = models.CharField(max_length=250)
-#     postal_code = models.CharField(max_length=20)
-#     city = models.CharField(max_length=100)
-#     created = models.DateTimeField(auto_now_add=True)
-#     updated = models.DateTimeField(auto_now=True)
-#     paid = models.BooleanField(default=False)
-
-
-# # CHOICES = [('item1', 'item 1'),
-# #            ('item2', 'item 2')]
-
-
-# # class OrderCreateForm(ModelForm):
-# #     postal_code = forms.ChoiceField(
-# #         choices=CHOICES, widget=forms.RadioSelect())
-
-# #     class Meta:
-# #         model = Order
-# #         fields = ['first_name', 'last_name', 'email',
-# #                   'address', 'postal_code', 'city']
