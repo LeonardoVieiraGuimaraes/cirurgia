@@ -96,7 +96,7 @@ DATABASES = {
         'NAME': os.environ['postgres'],
         'HOST': os.environ['cirugia-server.postgres.database.azure.com'],
         'USER': os.environ['rkhuvpebkf'],
-        'PASSWORD': os.environ['P4RD35T44OX5MOB7$'],
+        'PASSWORD': os.environ['P4RD35T44OX5MOB7$']
 
     }
 }
