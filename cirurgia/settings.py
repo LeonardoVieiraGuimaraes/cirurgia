@@ -29,9 +29,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', False)
 
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
@@ -73,36 +73,27 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "cirurgia.wsgi.application"
 
-# DBNAME = os.environ["postgres"]
-# DBHOST = os.environ["cirugia-server"]
-# DBUSER = os.environ["rkhuvpebkf"]
-# DBPASS = os.environ["P4RD35T44OX5MOB7$"]
-
-# hostname = os.environ['DBHOST']
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
 # DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         # "NAME": BASE_DIR / "db.sqlite3",
-#         "NAME": DBNAME,
-#         "USER": DBUSER,
-#         "PASSWORD": DBPASS,
-#         "HOST": hostname + ".postgres.database.azrue.com",
-#         # 'PORT': '',
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': os.getenv('postgres'),
+#         'USER': os.getenv('hosmkojhbe'),
+#         'PASSWORD': os.getenv('I8KKWH5P60C27H34$'),
+#         'HOST': os.getenv('appcirurgiasegura-server.postgres.database.azure.com'),
+#         'PORT': '5432',
+#         'OPTIONS': {'sslmode': 'require'}
 #     }
 # }
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('postgres'),
-        'USER': os.getenv('hosmkojhbe'),
-        'PASSWORD': os.getenv('I8KKWH5P60C27H34$'),
-        'HOST': os.getenv('appcirurgiasegura-server.postgres.database.azure.com'),
-        'PORT': '5432',
-        'OPTIONS': {'sslmode': 'require'}
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
