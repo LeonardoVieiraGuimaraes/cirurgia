@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block form %}
-
+{% csrf_token %}
 
 <fieldset>
 
@@ -30,14 +30,16 @@
         <p>Modalidade:</p>
         <p>
 
-            <input {% if form.modalidade.value == "Eletiva" %} checked {% endif %} type="radio"
+            <input {% if form.modalidade.value=="Eletiva" %} checked {% endif %} type="radio"
                 name="{{ form.modalidade.name }}" id="idEletiva" value="Eletiva" checked>
             <label for="idEletiva">Eletiva</label><br>
 
-            <input  {% if form.modalidade.value == "Urgência" %} checked {% endif %} type="radio" name="{{ form.modalidade.name }}" id="idUrgencia" value="Urgência">
+            <input {% if form.modalidade.value=="Urgência" %} checked {% endif %} type="radio"
+                name="{{ form.modalidade.name }}" id="idUrgencia" value="Urgência">
             <label for="idUrgencia">Urgência</label><br>
 
-            <input {% if form.modalidade.value == "Emergência" %} checked {% endif %} type="radio" name="{{ form.modalidade.name }}" id="idEmergencia" value="Emergência">
+            <input {% if form.modalidade.value=="Emergência" %} checked {% endif %} type="radio"
+                name="{{ form.modalidade.name }}" id="idEmergencia" value="Emergência">
             <label for="idEmergencia">Emergência</label><br>
         </p>
 
@@ -45,30 +47,36 @@
     <p>Realizou Quimeoterapia:</p>
 
     <p>
-        <input{% if form.realizouQuimeoterapia.value == "s" %} checked {% endif %} type="radio" name="{{ form.realizouQuimeoterapia.name }}" id="realizouQuimeoterapiaS" value="s" required>
-        <label for="realizouQuimeoterapiaS">Sim</label>
+        <input{% if form.realizouQuimeoterapia.value=="s" %} checked {% endif %} type="radio"
+            name="{{ form.realizouQuimeoterapia.name }}" id="realizouQuimeoterapiaS" value="s" required>
+            <label for="realizouQuimeoterapiaS">Sim</label>
 
-        <label for="{{ form.quantasSQ.id_for_label }}">Quantas:</label>
-        <input type="number" name="{{ form.quantasSQ.name }}" id="{{ form.quantasSQ.id_for_label }}" value="{{ form.quantasSQ.value | default_if_none:'' }}" required><br>
+            <label for="{{ form.quantasSQ.id_for_label }}">Quantas:</label>
+            <input type="number" name="{{ form.quantasSQ.name }}" id="{{ form.quantasSQ.id_for_label }}"
+                value="{{ form.quantasSQ.value | default_if_none:'' }}" required><br>
 
-        <input <input{% if form.realizouQuimeoterapia.value == "n" %} checked {% endif %} type="radio" name="{{ form.realizouQuimeoterapia.name }}" id="realizouQuimeoterapiaN" value="n" required>
-        <label for="realizouQuimeoterapiaN">Não</label><br>
+            <input <input{% if form.realizouQuimeoterapia.value=="n" %} checked {% endif %} type="radio"
+                name="{{ form.realizouQuimeoterapia.name }}" id="realizouQuimeoterapiaN" value="n" required>
+            <label for="realizouQuimeoterapiaN">Não</label><br>
 
     </p>
 
     <p>Realizou Radioterapia:</p>
     <div class="form-group">
-    <p>
-        <input <input {% if form.realizouRadioterapia.value == "s" %} checked {% endif %} type="radio" name="{{ form.realizouRadioterapia.name }}" id="realizouRadioterapiaS" value="s">
-        <label for="realizouRadioterapiaS" oninput = "EnableDisable({{ form.quantasRR.id_for_label }}" >Sim</label>
+        <p>
+            <input <input {% if form.realizouRadioterapia.value=="s" %} checked {% endif %} type="radio"
+                name="{{ form.realizouRadioterapia.name }}" id="realizouRadioterapiaS" value="s">
+            <label for="realizouRadioterapiaS" oninput="EnableDisable({{ form.quantasRR.id_for_label }}">Sim</label>
 
-        <label for="{{ form.realizouRadioterapia.id_for_label }}">Quantas:</label>
-        <input {{ name }} type="number" name="{{ form.quantasRR.name }}" id="{{ form.quantasRR.id_for_label }}"  value="{{ form.quantasSQ.value | default_if_none:'' }}" required><br>
+            <label for="{{ form.realizouRadioterapia.id_for_label }}">Quantas:</label>
+            <input {{ name }} type="number" name="{{ form.quantasRR.name }}" id="{{ form.quantasRR.id_for_label }}"
+                value="{{ form.quantasSQ.value | default_if_none:'' }}" required><br>
 
-        <input <input{% if form.realizouRadioterapia.value == "n" %} checked {% endif %} type="radio" name="{{ form.realizouRadioterapia.name }}" id="realizouRadioterapiaN" value="n" required>
-        <label for="realizouRadioterapiaN">Não</label><br>
+            <input <input{% if form.realizouRadioterapia.value=="n" %} checked {% endif %} type="radio"
+                name="{{ form.realizouRadioterapia.name }}" id="realizouRadioterapiaN" value="n" required>
+            <label for="realizouRadioterapiaN">Não</label><br>
 
-    </p>
+        </p>
     </div>
 
 
