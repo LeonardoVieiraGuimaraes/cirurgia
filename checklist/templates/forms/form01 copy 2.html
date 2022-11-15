@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% load crispy_forms_tags %}
+
 
 
 
@@ -46,18 +46,18 @@
 {% block form %}
 
 
-{%csrf_token%}
-{%if form%}
+
+{% if form %}
 
 <div class="row bg-white">
 
-    {%for field in form%}
+    {% for field in form %}
     <div class="col-md-6 p-2">{{field|as_crispy_field}}</div>
 
-    {%endfor%}
+    {% endfor %}
 
 </div>
-{%endif%}
+{% endif %}
 
 
 {% endblock %}
