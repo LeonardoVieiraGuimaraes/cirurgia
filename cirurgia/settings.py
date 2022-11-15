@@ -25,9 +25,9 @@ SECRET_KEY = "django-insecure-7t3d=lb9j7-#=mpe79=jre18fe%=vtf+dc9(m!3n4@mhuibs%a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
-
+ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
@@ -92,15 +92,15 @@ WSGI_APPLICATION = "cirurgia.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['postgres'],
-        'HOST': os.environ['cirugia-server.postgres.database.azure.com'],
-        'USER': os.environ['rkhuvpebkf'],
-        'PASSWORD': os.environ['P4RD35T44OX5MOB7$']
-
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv('postgres'),
+        'USER': os.getenv('hosmkojhbe'),
+        'PASSWORD': os.getenv('I8KKWH5P60C27H34$'),
+        'HOST': os.getenv('appcirurgiasegura-server.postgres.database.azure.com'),
+        'PORT': '5432',
+        'OPTIONS': {'sslmode': 'require'}
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
