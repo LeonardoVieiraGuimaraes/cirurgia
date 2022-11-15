@@ -38,24 +38,3 @@ class AntesUsuarioSSCForm(ModelForm):
     class Meta:
         model = AntesUsuarioSSC
         fields = '__all__'
-
-
-# choicesSN = [('Sim', 'Sim'), ('Sim', 'Não')]
-
-
-# class DadosUsuarioModelForm(ModelForm):
-#     modalidade = forms.ChoiceField(
-#         choices=choicesSN, widget=forms.RadioSelect())
-#     daatNascimento = forms.DateInput()
-
-#     class Meta:
-#         model = DadosUsuario
-#         fields = ['nome', 'dataNascimento', 'prontuario', 'nomeMae',
-#                   'cirurgiaProposta', 'cirurgiaRealizada', 'salaCirurgia', 'dataCirurugia', 'modalidade']
-#         # widgets = {'modalidade': forms.RadioSelect(), }
-
-#         label = {'nome': 'Nome'}
-
-#         # widgets = {
-#         #     'dataNascimento': DatePicker(),
-#         # }
